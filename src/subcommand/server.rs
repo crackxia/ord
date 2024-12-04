@@ -2175,6 +2175,7 @@ impl Server {
     })
   }
 
+
   async fn inscriptions_history_in_block_paginated(
     Extension(index): Extension<Arc<Index>>,
     Path((block_height, page_index)): Path<(u32, u32)>,
