@@ -2175,7 +2175,6 @@ impl Server {
     })
   }
 
-
   async fn inscriptions_history_in_block_paginated(
     Extension(index): Extension<Arc<Index>>,
     Path((block_height, page_index)): Path<(u32, u32)>,
@@ -2186,7 +2185,7 @@ impl Server {
         return Ok(StatusCode::NOT_FOUND.into_response());
       }
 
-      let page_size = 100000;
+      let page_size = 1000;
       let page_index_usize = usize::try_from(page_index).unwrap_or(usize::MAX);
       let page_size_usize = usize::try_from(page_size).unwrap_or(usize::MAX);
 
